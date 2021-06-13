@@ -1,5 +1,21 @@
 package com.generic.maxtest;
-public class MaximumTest {
+public class MaximumTest<T extends Comparable<T>> {
+    T x,y,z;
+
+    /**
+     * defining constructor
+     * @param x
+     * @param y
+     * @param z
+     */
+    public MaximumTest(T x, T y, T z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+   public T maximum(){
+        return MaximumTest.maximum(x,y,z);
+    }
     /**
      * using generic method to find the maximum values
      * @param x
@@ -31,8 +47,8 @@ public class MaximumTest {
         Integer aI=3,bI=4,cI=6;
         Float eD=1.2222f,fD=2.3123f,gD=1.1234f;
         String pS="dell",qS="asus",rD="linux";
-        maximum(aI,bI,cI);
-        maximum(eD,fD,gD);
-        maximum(pS,qS,rD);
+        new MaximumTest(aI,bI,cI).maximum();
+        new MaximumTest(eD,fD,gD).maximum();
+        new MaximumTest(pS,qS,rD).maximum();
     }
 }
