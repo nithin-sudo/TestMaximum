@@ -1,6 +1,6 @@
 package com.generic.maxtest;
 public class MaximumTest<T extends Comparable<T>> {
-    T x,y,z,a;
+    T x,y,z;
 
     /**
      * defining constructor
@@ -8,11 +8,10 @@ public class MaximumTest<T extends Comparable<T>> {
      * @param y
      * @param z
      */
-    public MaximumTest(T x, T y, T z,T a) {
+    public MaximumTest(T x, T y, T z) {
         this.x = x;
         this.y = y;
         this.z = z;
-        this.a = a;
     }
    public T maximum(){
         return MaximumTest.maximum(x,y,z,a);
@@ -25,7 +24,7 @@ public class MaximumTest<T extends Comparable<T>> {
      * @param <T>
      * @return
      */
-    public static <T extends Comparable>T maximum(T x,T y,T z,T a){
+    public static <T extends Comparable>T maximum(T x,T y,T z){
         T max=x;
         if(y.compareTo(max)>0){
             max=y;
@@ -33,14 +32,11 @@ public class MaximumTest<T extends Comparable<T>> {
         if (z.compareTo(max)>0){
             max=z;
         }
-        if (a.compareTo(max)>0){
-            max=a;
-        }
-        printMax(x,y,z,a,max);
+        printMax(x,y,z,max);
         return max;
     }
-    public static <E>void printMax(E x,E y,E z, E a,E max) {
-        System.out.println("Maximum of "+x+" ,"+y+" ,"+z+","+a+ " is "+max);
+    public static <E>void printMax(E x,E y,E z,E max) {
+        System.out.println("Maximum of "+x+" ,"+y+" ,"+z+" is "+max);
     }
 
     /**
@@ -48,11 +44,11 @@ public class MaximumTest<T extends Comparable<T>> {
      * @param args
      */
     public static void main(String[] args) {
-        Integer aI=3,bI=4,cI=6,dI=3;
-        Float eD=1.2222f,fD=2.3123f,gD=1.1234f,hD=1.211f;
-        String pS="dell",qS="asus",rS="linux",sS="hp";
-        new MaximumTest(aI,bI,cI,dI).maximum();
-        new MaximumTest(eD,fD,gD,hD).maximum();
-        new MaximumTest(pS,qS,rS,sS).maximum();
+        Integer aI=3,bI=4,cI=6;
+        Float eD=1.2222f,fD=2.3123f,gD=1.1234f;
+        String pS="dell",qS="asus",rS="linux";
+        new MaximumTest(aI,bI,cI).maximum();
+        new MaximumTest(eD,fD,gD).maximum();
+        new MaximumTest(pS,qS,rS).maximum();
     }
 }
